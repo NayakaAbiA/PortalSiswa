@@ -10,7 +10,7 @@
 </nav>
 
 <div class="saidbar">
-  <a href="#"><i class="fas fa-home"></i><span>Beranda</span></a>
+  <a href="{{ route('dashboard') }}"><i class="fas fa-home"></i><span>Beranda</span></a>
   <a href="{{ route('profil') }}"><i class="fas fa-user"></i><span>Profil</span></a>
   <button class="dropdown-btn"><i class="fas fa-book"></i><span>Pembelajaran</span>
       <i class="fa fa-caret-down"></i>

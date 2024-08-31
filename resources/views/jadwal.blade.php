@@ -8,174 +8,173 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         body {
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #e0e7ff, #f5f7fa);
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #e0e7ff, #f5f7fa);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
 
-.schedule-container {
-    background-color: #fff;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-    padding: 50px;
-    width: 100%;
-    max-width: 1200px;
-    margin: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    animation: fadeIn 1s ease-in-out;
-    margin-top: 140px; /* Jarak dari bagian atas halaman */
-}
+        .schedule-container {
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            padding: 50px;
+            width: 100%;
+            max-width: 1200px;
+            margin: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 1s ease-in-out;
+            margin-top: 50px; /* Jarak dari bagian atas halaman */
+        }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-h2 {
-    color: #2c3e50;
-    margin-bottom: 40px;
-    font-size: 38px;
-    letter-spacing: 1px;
-    text-align: center;
-    text-transform: uppercase;
-    font-weight: 700;
-}
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 40px;
+            font-size: 38px;
+            letter-spacing: 1px;
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
 
-.schedule-row {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 25px;
-    flex-wrap: wrap; /* Agar elemen bisa membungkus pada layar kecil */
-}
+        .schedule-row {
+            width: 100%;
+            display: flex;
+            flex-direction: column; /* Ubah menjadi kolom */
+            justify-content: space-between;
+            align-items: center; /* Sesuaikan elemen agar berada di tengah */
+            gap: 25px;
+        }
 
-.schedule-box {
-    flex: 1;
-    padding: 25px;
-    background-color: #f1f3f5;
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    cursor: pointer;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    max-width: 500px; /* Membatasi lebar maksimum */
-    margin-bottom: 20px; /* Jarak antar kotak */
-}
+        .schedule-box {
+            width: 100%; /* Atur lebar 100% agar elemen memenuhi kontainer */
+            max-width: 700px; /* Maksimum lebar agar tidak terlalu besar di layar lebar */
+            padding: 25px;
+            background-color: #f1f3f5;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px; /* Jarak antar kotak */
+        }
 
-.schedule-box:hover {
-    background-color: #e2e6ea;
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-}
+        .schedule-box:hover {
+            background-color: #e2e6ea;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
 
-.schedule-box img {
-    width: 100%;
-    height: auto;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    transition: transform 0.3s ease-in-out;
-}
+        .schedule-box img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            transition: transform 0.3s ease-in-out;
+        }
 
-.schedule-box:hover img {
-    transform: scale(1.05);
-}
+        .schedule-box:hover img {
+            transform: scale(1.05);
+        }
 
-.schedule-box h3 {
-    font-size: 26px;
-    color: #444;
-    text-align: center;
-    margin-top: 10px;
-    font-weight: 600;
-}
+        .schedule-box h3 {
+            font-size: 26px;
+            color: #444;
+            text-align: center;
+            margin-top: 10px;
+            font-weight: 600;
+        }
 
-/* Modal styling */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.8);
-}
+        /* Modal styling */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
 
-.modal-content {
-    margin: 15% auto;
-    display: block;
-    width: 80%;
-    max-width: 700px;
-    animation: zoomIn 0.5s ease;
-}
+        .modal-content {
+            margin: 15% auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            animation: zoomIn 0.5s ease;
+        }
 
-@keyframes zoomIn {
-    from {
-        transform: scale(0);
-    }
-    to {
-        transform: scale(1);
-    }
-}
+        @keyframes zoomIn {
+            from {
+                transform: scale(0);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
 
-.close {
-    position: absolute;
-    top: 20px;
-    right: 35px;
-    color: white;
-    font-size: 40px;
-    font-weight: bold;
-    transition: 0.3s;
-}
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
 
-.close:hover,
-.close:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
-}
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
 
-/* Responsif untuk tablet dan layar lebih kecil */
-@media (max-width: 1024px) {
-    .schedule-container {
-        padding: 40px;
-    }
+        /* Responsif untuk tablet dan layar lebih kecil */
+        @media (max-width: 1024px) {
+            .schedule-container {
+                padding: 40px;
+            }
 
-    .schedule-row {
-        flex-direction: column;
-        gap: 30px;
-    }
-}
+            .schedule-row {
+                flex-direction: column;
+                gap: 30px;
+            }
+        }
 
-/* Responsif untuk layar ponsel */
-@media (max-width: 768px) {
-    h2 {
-        font-size: 32px;
-    }
+        /* Responsif untuk layar ponsel */
+        @media (max-width: 768px) {
+            h2 {
+                font-size: 32px;
+            }
 
-    .schedule-box h3 {
-        font-size: 24px;
-    }
-}
+            .schedule-box h3 {
+                font-size: 24px;
+            }
+        }
 
     </style>
 </head>

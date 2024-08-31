@@ -31,7 +31,7 @@ Route::get('/',function(){
  //ROUTE UNTUK YANG SUDAH PUNYA AKUN
 Route::middleware(['auth'])->group(function(){
     // ADMIN
-    Route::get('/dashboard',[AdminController::class, 'index']);
+    Route::get('/dashboard',[SiswaController::class, 'index'])->name('dashboard');
     Route::get('/admin/profil', [AdminController::class, 'profil'])->name('profil');
     // SISWA
     Route::get('/dashboard/siswa',[SiswaController::class, 'index']);
