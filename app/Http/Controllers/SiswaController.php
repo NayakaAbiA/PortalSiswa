@@ -18,7 +18,11 @@ class SiswaController extends Controller
     function materi(){
         return view('materi');
     }
+<<<<<<< HEAD
+    
+=======
     function add(){
         return view('add');
     }
+>>>>>>> a63ccf3dfc7b0cf074c8ae9f1cf4e64bf5f39e0f
 }
