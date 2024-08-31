@@ -9,32 +9,60 @@
   </a>
 </nav>
 
-<div class="sidebar collapsed" id="sidebar" onmouseover="expandSidebar()" onmouseout="collapseSidebar()">
-  <a href="/dashboard"><i class="fas fa-home"></i> Beranda</a>
-  <a href="{{ route('profil') }}"><i class="fas fa-user"></i> Profil</a>
-  <a href="{{route('jadwal')}}"><i class="fas fa-calendar-alt"></i> Jadwal Pelajaran</a>
-  <a href="#"><i class="fas fa-tasks"></i> Tugas</a>
-  <a href="#grades"><i class="fas fa-graduation-cap"></i> Nilai</a>
-  <a href="{{route('materi')}}"><i class="fas fa-book"></i> Materi Pelajaran</a>
-  <a href="/logout"  document.getElementById>
-    <i class="fas fa-sign-out-alt"></i> Log Out</a>
+<div class="saidbar">
+  <a href="#"><i class="fas fa-home"></i><span>Beranda</span></a>
+  <a href="{{ route('profil') }}"><i class="fas fa-user"></i><span>Profil</span></a>
+  <button class="dropdown-btn"><i class="fas fa-book"></i><span>Pembelajaran</span>
+      <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+      <a href="{{ route('jadwal') }}"><i class="fas fa-calendar-alt"></i> Jadwal Pelajaran</a>
+      <a href="{{ route('materi') }}"><i class="fas fa-book-open"></i> Materi Pelajaran</a>
+      <a href="#"><i class="fas fa-tasks"></i> Tugas</a>
+      <a href="#"><i class="fas fa-chart-bar"></i> Nilai</a>
+  </div>
+  <button class="dropdown-btn"><i class="fas fa-comments"></i><span>Forum</span>
+      <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+      <a href="#"><i class="fas fa-comments"></i> Forum Diskusi</a>
+      <a href="#"><i class="fa-solid fa-user-plus"></i> Tambah Akun</a>
+  </div>
+  <a href="{{ route('logout') }}"><i class="fas fa-sign-out-alt"></i><span>Logout</span></a>
 </div>
 
-<script>
-function expandSidebar() {
-        var sidebar = document.getElementById('sidebar');
-        sidebar.classList.remove('collapsed');
-        document.getElementById('main-content').classList.add('full-width');
-    }
+    <script>
+        // Handle dropdown functionality
+        document.querySelectorAll('.dropdown-btn').forEach(btn => {
+            btn.addEventListener('click', function(event) {
+                // Prevent sidebar collapse when clicking on dropdown
+                event.stopPropagation();
 
-    // Function to collapse sidebar when not hovering
-    function collapseSidebar() {
-        var sidebar = document.getElementById('sidebar');
-        sidebar.classList.add('collapsed');
-        document.getElementById('main-content').classList.remove('full-width');
-    }
+                const dropdownContent = this.nextElementSibling;
+                dropdownContent.classList.toggle('show');
+            });
+        });
 
-    // Attach event listeners for hover
-    document.getElementById('sidebar').addEventListener('mouseover', expandSidebar);
-    document.getElementById('sidebar').addEventListener('mouseout', collapseSidebar);
+        // Ensure dropdown stays open when hovering over it
+        document.querySelectorAll('.dropdown-container').forEach(container => {
+            container.addEventListener('mouseover', function() {
+                this.classList.add('show');
+            });
+
+            container.addEventListener('mouseout', function() {
+                // Keep it open if the user wants, otherwise it will toggle on click
+            });
+        });
+
+        // Close dropdowns when clicking outside the sidebar
+        document.addEventListener('click', function(event) {
+            const sidebar = document.querySelector('.saidbar');
+            const dropdowns = document.querySelectorAll('.dropdown-container');
+
+            if (!sidebar.contains(event.target)) {
+                dropdowns.forEach(dropdown => {
+                    dropdown.classList.remove('show');
+                });
+            }
+        });
     </script>

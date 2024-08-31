@@ -29,7 +29,7 @@
             <p>Informasi mengenai jadwal pelajaran Anda.</p>
           </div>
           <div class="card-footer">
-            <a href="#schedule" class="btn btn-primary">Lihat Jadwal</a>
+            <a href="{{ route('jadwal') }}" class="btn btn-primary">Lihat Jadwal</a>
           </div>
         </div>
       </div>
