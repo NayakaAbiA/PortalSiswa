@@ -10,7 +10,7 @@
 </nav>
 
 <div class="saidbar">
-  <a href="{{ route('dashboard') }}"><i class="fas fa-home"></i><span>Beranda</span></a>
+  <a href="#"><i class="fas fa-home"></i><span>Beranda</span></a>
   <a href="{{ route('profil') }}"><i class="fas fa-user"></i><span>Profil</span></a>
   <button class="dropdown-btn"><i class="fas fa-book"></i><span>Pembelajaran</span>
       <i class="fa fa-caret-down"></i>
@@ -31,38 +31,57 @@
   <a href="{{ route('logout') }}"><i class="fas fa-sign-out-alt"></i><span>Logout</span></a>
 </div>
 
-    <script>
-        // Handle dropdown functionality
-        document.querySelectorAll('.dropdown-btn').forEach(btn => {
-            btn.addEventListener('click', function(event) {
-                // Prevent sidebar collapse when clicking on dropdown
-                event.stopPropagation();
-
-                const dropdownContent = this.nextElementSibling;
-                dropdownContent.classList.toggle('show');
-            });
-        });
-
-        // Ensure dropdown stays open when hovering over it
-        document.querySelectorAll('.dropdown-container').forEach(container => {
-            container.addEventListener('mouseover', function() {
-                this.classList.add('show');
-            });
-
-            container.addEventListener('mouseout', function() {
-                // Keep it open if the user wants, otherwise it will toggle on click
-            });
-        });
-
-        // Close dropdowns when clicking outside the sidebar
-        document.addEventListener('click', function(event) {
-            const sidebar = document.querySelector('.saidbar');
-            const dropdowns = document.querySelectorAll('.dropdown-container');
-
-            if (!sidebar.contains(event.target)) {
-                dropdowns.forEach(dropdown => {
-                    dropdown.classList.remove('show');
-                });
-            }
-        });
-    </script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const sidebar = document.querySelector('.saidbar');
+      const mainContent = document.querySelector('.main-content');
+  
+      // Toggle expanded and collapsed classes based on hover
+      sidebar.addEventListener('mouseover', function() {
+          sidebar.classList.add('expanded');
+          sidebar.classList.remove('collapsed');
+          mainContent.classList.add('expanded');
+      });
+  
+      sidebar.addEventListener('mouseout', function() {
+          if (!sidebar.classList.contains('hover')) {
+              sidebar.classList.remove('expanded');
+              sidebar.classList.add('collapsed');
+              mainContent.classList.remove('expanded');
+          }
+      });
+  
+      // Dropdown functionality
+      document.querySelectorAll('.dropdown-btn').forEach(btn => {
+          btn.addEventListener('click', function(event) {
+              event.stopPropagation();
+              const dropdownContent = this.nextElementSibling;
+              dropdownContent.classList.toggle('show');
+          });
+      });
+  
+      // Ensure dropdown stays open when hovering over it
+      document.querySelectorAll('.dropdown-container').forEach(container => {
+          container.addEventListener('mouseover', function() {
+              this.classList.add('show');
+          });
+  
+          container.addEventListener('mouseout', function() {
+              if (sidebar.classList.contains('expanded')) {
+                  this.classList.add('show');
+              } else {
+                  this.classList.remove('show');
+              }
+          });
+      });
+  
+      // Close dropdowns when clicking outside the sidebar
+      document.addEventListener('click', function(event) {
+          if (!sidebar.contains(event.target)) {
+              document.querySelectorAll('.dropdown-container').forEach(dropdown => {
+                  dropdown.classList.remove('show');
+              });
+          }
+      });
+  });
+</script> 

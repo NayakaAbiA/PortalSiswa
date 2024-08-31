@@ -26,10 +26,10 @@
         }
 
         h1 {
-            font-size: 2.5rem;
-            margin-bottom: 50px;
+            font-size: 2rem;
+            margin-bottom: 30px;
             color: #2c3e50;
-            margin-top: 130px; /* Menambahkan jarak dari bagian atas halaman */
+            margin-top: 120px; /* Menambahkan jarak dari bagian atas halaman */
         }
 
         .subject-container {
@@ -37,14 +37,16 @@
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
             width: 100%;
-            max-width: 1200px;
+            max-width: 900px;
+            margin-left: 0;
+            padding: 0 10px;
         }
 
         .subject-box {
             background-color: #fff;
-            border-radius: 16px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-            padding: 30px 20px;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            padding: 15px;
             text-align: center;
             position: relative;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -64,14 +66,14 @@
         }
 
         .subject-box:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
         }
 
         .subject-box img {
-            width: 50px;
-            height: 50px;
-            margin-bottom: 15px;
+            width: 40px;
+            height: 40px;
+            margin-bottom: 10px;
             transition: transform 0.3s ease;
         }
 
@@ -80,31 +82,45 @@
         }
 
         .subject-box h2 {
-            font-size: 1.6rem;
-            margin-bottom: 10px;
+            font-size: 1.4rem;
+            margin-bottom: 8px;
             color: #2980b9;
         }
 
         .subject-box p {
-            font-size: 1rem;
+            font-size: 0.9rem;
             color: #7f8c8d;
         }
 
         .new-assignment {
             position: absolute;
-            top: 10px;
-            right: 10px;
+            top: 8px;
+            right: 8px;
             background-color: #e74c3c;
             color: #fff;
             border-radius: 50%;
-            padding: 8px;
-            font-size: 0.9rem;
+            padding: 6px;
+            font-size: 0.8rem;
             font-weight: bold;
         }
 
         @media (max-width: 1000px) {
             h1 {
-                font-size: 2rem;
+                font-size: 1.8rem;
+            }
+            .subject-container {
+                grid-template-columns: repeat(2, 1fr); /* Tampilkan 2 subject-box per baris di layar yang lebih kecil */
+                max-width: 600px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.6rem;
+            }
+            .subject-container {
+                grid-template-columns: 1fr; /* Tampilkan 1 subject-box per baris di layar yang lebih kecil */
+                max-width: 300px;
             }
         }
 

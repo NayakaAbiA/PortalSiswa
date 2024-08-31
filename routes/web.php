@@ -31,12 +31,7 @@ Route::get('/',function(){
 
  //ROUTE UNTUK YANG SUDAH PUNYA AKUN
 Route::middleware(['auth'])->group(function(){
-    // ADMIN
-<<<<<<< HEAD
-    Route::get('/dashboard',[SiswaController::class, 'index'])->name('dashboard');
-=======
-    Route::get('/dashboard',[TambahSiswaController::class, 'index'])->name('dashboard');
->>>>>>> 8c0a7f18e6f55c5b7be6f44621dc76e9839fd5ca
+
     Route::get('/admin/profil', [AdminController::class, 'profil'])->name('profil');
     Route::get('/admin/tambah_siswa', [TambahSiswaController::class, 'tambah_siswa'])->name('tambah_siswa');
     Route::post('/tambahsiswa', [TambahSiswaController::class, 'create'])->name('create_siswa');
