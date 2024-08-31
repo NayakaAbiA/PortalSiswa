@@ -21,6 +21,12 @@ class SiswaSeeder extends Seeder
                 'password'=>bcrypt('2024')
             ],
             [
+                'name'=>'Alif Miftah Fauzan',
+                'nis'=>'222310254',
+                'role'=>'siswa',
+                'password'=>bcrypt('111')
+            ],
+            [
                 'name'=>'guru kece',
                 'nis'=>'2223102706',
                 'role'=>'guru',

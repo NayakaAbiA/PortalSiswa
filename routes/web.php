@@ -38,6 +38,7 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/dashboard/profil',[SiswaController::class, 'profil'])->name('profil');
     Route::get('/dashboard/jadwal',[SiswaController::class, 'jadwal'])->name('jadwal');
     Route::get('/dashboard/materi',[SiswaController::class, 'materi'])->name('materi');
+    Route::get('/dashboard/add',[SiswaController::class, 'add'])->name('add');
     
     Route::get('/logout',[IsuController::class, 'logout'])->name('logout');
 });

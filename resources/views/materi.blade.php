@@ -29,7 +29,7 @@ h1 {
     font-size: 2.5rem;
     margin-bottom: 50px;
     color: #2c3e50;
-    margin-top: 150px; /* Menambahkan jarak dari bagian atas halaman */
+    margin-top: 130px; /* Menambahkan jarak dari bagian atas halaman */
 }
 
 .subject-container {
@@ -102,31 +102,31 @@ h1 {
     @include('layout.app')
     <h1>Materi Pelajaran</h1>
     <div class="subject-container">
-        <div class="subject-box" onclick="window.location.href='add.html'">
+        <div class="subject-box" onclick="window.location.href='{{ route('add') }}'">
             <img src="{{asset('assets/img/mtk.png')}}" alt="">
             <h2>Matematika</h2>
         </div>
-        <div class="subject-box" onclick="window.location.href='add.html'">
+        <div class="subject-box" onclick="window.location.href='{{ route('add') }}'">
             <img src="{{asset('assets/img/pkn2.png')}}" alt="">
             <h2>Pendidikan Kewarganegaraan</h2>
         </div>
-        <div class="subject-box" onclick="window.location.href='add.html'">
+        <div class="subject-box" onclick="window.location.href='{{ route('add') }}'">
             <img src="{{asset('assets/img/indo2.png')}}" alt="">
             <h2>Bahasa Indonesia</h2>
         </div>
-        <div class="subject-box" onclick="window.location.href='add.html'">
+        <div class="subject-box" onclick="window.location.href='{{ route('add') }}'">
             <img src="{{asset('assets/img/sejarah2.png')}}" alt="">
             <h2>Sejarah</h2>
         </div>
-        <div class="subject-box" onclick="window.location.href='add.html'">
+        <div class="subject-box" onclick="window.location.href='{{ route('add') }}'">
             <img src="{{asset('assets/img/sunda2.png')}}" alt="">
             <h2>Bahasa Sunda</h2>
         </div>
-        <div class="subject-box" onclick="window.location.href='add.html'">
+        <div class="subject-box" onclick="window.location.href='{{ route('add') }}'">
             <img src="{{asset('assets/img/aceng.png')}}" alt="">
             <h2>Pendidikan Kewirausahaan</h2>
         </div>
-        <div class="subject-box" onclick="window.location.href='materi-ipa.html'">
+        <div class="subject-box" onclick="window.location.href='{{ route('add') }}'">
             <img src="{{asset('assets/img/inggris2.png')}}" alt="">
             <h2>Bahasa Inggris</h2>
         </div>

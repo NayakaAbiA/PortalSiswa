@@ -18,4 +18,7 @@ class SiswaController extends Controller
     function materi(){
         return view('materi');
     }
+    function add(){
+        return view('add');
+    }
 }

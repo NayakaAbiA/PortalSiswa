@@ -31,7 +31,7 @@
     justify-content: center;
     align-items: center;
     animation: fadeIn 1s ease-in-out;
-    margin-top: 125px; /* Jarak dari bagian atas halaman */
+    margin-top: 140px; /* Jarak dari bagian atas halaman */
 }
 
 @keyframes fadeIn {
