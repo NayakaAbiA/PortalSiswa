@@ -36,7 +36,7 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/admin/profil', [AdminController::class, 'profil'])->name('profil');
     Route::get('/admin/tambah_siswa', [TambahSiswaController::class, 'tambah_siswa'])->name('tambah_siswa');
     Route::post('/tambahsiswa', [TambahSiswaController::class, 'create'])->name('create_siswa');
-    Route::get('/edit{nisn}',[SiswaController::class, 'edit'])->name('edit');
+    Route::get('/edit{id}',[SiswaController::class, 'edit'])->name('edit');
     // SISWA
     Route::get('/dashboard/siswa',[SiswaController::class, 'index']);
     Route::get('/dashboard/profil',[SiswaController::class, 'profil'])->name('profil');

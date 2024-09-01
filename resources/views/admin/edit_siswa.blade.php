@@ -23,25 +23,10 @@
                   <div class="card">
                     <div class="card-header"> TAMBAH DATA edit</div>
 
-                    <form action="{{ route('update', $siswa->nisn) }}" method="POST">
+                    <form action="" method="POST">
                     @csrf
                     <div class="card-body"> 
                       <table class="table table-striped"> 
-                                 <!--  <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label">Email address</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-
-                                   (KETIKA EMAIL SALAH)
-                                    @error('email')
-                                       <small>{{ $mesagge }}</small>    
-                                    @enderror 
-                                </div>  -->
-                                 <!-- <div class="mb-3 form-check">
-                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                                </div>
-                               -->
                                  <div class="mb-3">
                                     <label>NIS</label>
                                     <input type="text" class="form-control" name="nis" value="{{$siswas->nis}}" placeholder="Masukan Nama">
@@ -49,7 +34,7 @@
 
                                 <div class="mb-3">
                                     <label class="form-label">Nama</label>
-                                    <input type="text" class="form-control" name="nama" value="{{$siswas->nama}}" placeholder="Masukan Kelas">
+                                    <input type="text" class="form-control" name="nama" value="{{$siswas->nama}}" placeholder="Masukan Nama">
         
                                 </div>
 

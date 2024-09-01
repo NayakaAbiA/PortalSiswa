@@ -101,7 +101,7 @@
                                         <td data-label="Gambar"></td>
                                         <td data-label="Aksi">
                                             <a href="" class="text-primary">edit</i></a>
-                                            <a style="color: red;" href="" class="text-danger" onclick="return confirm('Yakin mau hapus tugas ini ?')"><i style="color: red;" class="bi bi-trash">hapus</i></a>
+                                            <a href="" <i style="color: red;" class="bi bi-trash">hapus</i></a>
                                         </td>
                                     </tr>
                                     @endforeach
