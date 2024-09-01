@@ -46,9 +46,9 @@ font-size: 0.8em;
 text-transform: uppercase;
 }
 
-/* Gaya untuk sidebar (menu samping) */
+/* Sidebar Styles */
 .saidbar {
-  width: 200px; /* Set default width to expanded size */
+  width: 45px;
   height: calc(100vh - 80px);
   background-color: #ffffff;
   position: fixed;
@@ -56,10 +56,29 @@ text-transform: uppercase;
   left: 0;
   padding-top: 20px;
   overflow-x: hidden;
+  transition: width 0.3s;
   z-index: 1;
   box-shadow: 5px 5px 10px rgba(102, 34, 34, 0.3);
 }
 
+/* When hovered over the sidebar, expand it */
+.saidbar:hover {
+  width: 200px;
+}
+
+.saidbar.expanded {
+  width: 200px;
+}
+
+.saidbar.collapsed {
+  width: 45px;
+}
+
+.saidbar.collapsed .dropdown-container {
+  display: none;
+}
+
+/* Style adjustments */
 .saidbar a, .saidbar .dropdown-btn {
   display: flex;
   align-items: center;
@@ -72,30 +91,38 @@ text-transform: uppercase;
   overflow: hidden;
   text-overflow: ellipsis;
   cursor: pointer;
-  width: 100%; /* Ensures buttons take full width of sidebar */
+  width: 100%;
   box-sizing: border-box;
 }
 
 .saidbar a i, .saidbar .dropdown-btn i {
   font-size: 20px;
-  margin-right: 15px;
+  margin-right: 20px;
   color: rgb(0, 0, 0);
   transition: margin-right 0.3s;
 }
 
 .saidbar a:hover, .saidbar .dropdown-btn:hover {
-  background-color: #ffffff;
+  background-color: #f0f0f0;
+}
+
+.saidbar.expanded a i {
+  margin-right: 15px;
 }
 
 .saidbar a span {
   display: inline;
 }
 
+.saidbar.collapsed a span {
+  display: none;
+}
+
 .dropdown-container {
   display: none;
   background-color: #ffffff;
   padding-left: 8px;
-  padding-bottom: 10px; /* Add padding for consistency */
+  padding-bottom: 10px;
 }
 
 .dropdown-container a {
@@ -113,6 +140,7 @@ text-transform: uppercase;
 .dropdown-container.show {
   display: block;
 }
+
 /* Gaya untuk konten utama */
 .main-content {
 margin-left: 15px; /* Disesuaikan dengan lebar sidebar */
